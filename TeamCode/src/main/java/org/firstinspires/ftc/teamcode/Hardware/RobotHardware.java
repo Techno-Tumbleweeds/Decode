@@ -2,11 +2,16 @@ package org.firstinspires.ftc.teamcode.Hardware;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.IMU;
 
 public class RobotHardware {
     public DcMotor leftFront, rightFront, leftBack, rightBack;
+    public IMU imu;
 
     public void init(HardwareMap hwMap) {
+        // IMU sensor
+        imu = hwMap.get(IMU.class, "imu");
+
         // Motor Names and Variables
         leftFront = hwMap.get(DcMotor.class, "leftFront");
         rightFront = hwMap.get(DcMotor.class, "rightFront");
